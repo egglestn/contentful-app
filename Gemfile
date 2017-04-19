@@ -43,6 +43,9 @@ gem "cancancan", "~> 1"
 gem "devise"
 gem "gretel" # breadcrumbs
 
+# Contentful
+gem "contentful"
+
 # Rollbar for exception monitoring, see https://rollbar.com/alliants/PROJECTNAME/#rails
 gem "rollbar"
 
