@@ -13,13 +13,13 @@ class HomeController < ApplicationController
 
     client = ContentfulService.call
     entry_id = '5PeGS2SoZGSa4GuiQsigQu'
-    entry = client.entry(entry_id)
+    @entry = client.entry(entry_id)
 
-    puts "===================="
-    puts "Contentful content"
-    puts "#{entry.name} - by #{entry.author}"
-    puts "\t  #{entry.description}"
-    puts "===================="
+    #puts "===================="
+    #puts "Contentful content"
+    #puts "#{entry.name} - by #{entry.author}"
+    #puts "\t  #{entry.description}"
+    #puts "===================="
 
     redirect_to(guest_dashboard_path) && return if current_user&.guest?
     redirect_to(admin_dashboard_path) && return if current_user
