@@ -1,6 +1,10 @@
 
 <h3>Contentful demo</h3>
 
-<h5><%= @entry.name %></h5>
-<h6><%= @entry.author %></h6>
-<span><%= @entry.description %></span>
+<% @entries.each do | entry | %>
+  <div class="entry">
+    <h5><%= entry.name %></h5>
+    <span><%= entry.description %></span>
+    <h6><%= entry.author %></h6>
+  </div>
+<% end %>

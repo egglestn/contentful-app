@@ -5,9 +5,14 @@ class HomeController < ApplicationController
   skip_authorization_check
 
   def show
+    @entries = []
     client = ContentfulService.call
-    entry_id = "5PeGS2SoZGSa4GuiQsigQu"
-    @entry = client.entry(entry_id)
+
+    products = client.entries()
+    products.each do |product|
+      entry = client.entry(product.id)
+      @entries.push(entry)
+    end
 
     redirect_to(guest_dashboard_path) && return if current_user&.guest?
     redirect_to(admin_dashboard_path) && return if current_user
